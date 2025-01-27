@@ -2,7 +2,7 @@
 let listaAmigos = [];
 
 //Luego agregar la funcion de verificar si el nombre esta repetido en la lista
-function sorteoDeAmigos() {
+function anadirAmigos() {
     const nombreAmigos = document.getElementById('amigo').value.trim();
     if (nombreAmigos === ''){
         alert("Por favor, inserte un nombre");
