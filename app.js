@@ -34,3 +34,23 @@ function actualizarLista() {
         lista.appendChild(li); // Agregar el <li> a la lista
     }
 }
+
+function sortearAmigo(params) {
+    if (listaDeAmigos == 0){
+        alert("No hay amigos para sortear");
+        return;
+    }else{
+        let amigoSorteado = listaDeAmigos[Math.floor(Math.random()*listaDeAmigos.length)]
+        console.log(amigoSorteado);
+        asignaTextoElemento('resultado',amigoSorteado);
+        const lista = document.getElementById('listaAmigos'); // Obtener el elemento de la lista
+    lista.innerHTML = ""; 
+        return;
+    }
+}
+
+function asignaTextoElemento(elemento,texto){
+    let elementoHTML=document.getElementById(elemento);
+    elementoHTML.innerHTML=texto;
+}
+//Luego crear una funcion y boton para restaurar la pagina a sus inicios
