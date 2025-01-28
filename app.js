@@ -15,6 +15,7 @@ function anadirAmigos() {
     listaDeAmigos.push(nombreAmigos); // Agrega el nombre a la lista
     limpiarCaja();
     actualizarLista();
+    console.log(listaDeAmigos);
 }
 
 // Limpia la caja de texto para nuevos ingresos
@@ -35,15 +36,22 @@ function actualizarLista() {
 }
 
 // Sortea un amigo aleatoriamente y muestra el resultado
-function sortearAmigo() {
+async function sortearAmigo() {
     if (listaDeAmigos.length === 0) { // Comprueba si la lista está vacía
         alert("No hay amigos para sortear");
         return;
     }
-    const amigoSorteado = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
-    asignaTextoElemento('listaAmigos','')
-    asignaTextoElemento('resultado', `Amigo sorteado: ${amigoSorteado}`);
+        const amigoSorteado = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
+        asignaTextoElemento('listaAmigos','')
+        asignaTextoElemento('resultado', `Amigo sorteado: ${amigoSorteado}`);
+    
+    /* await sleep(5000);
+    restaurarPagina(); */
 }
+
+/* var sleep = function(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}; */
 
 // Asigna texto a un elemento HTML específico
 function asignaTextoElemento(elemento, texto) {
