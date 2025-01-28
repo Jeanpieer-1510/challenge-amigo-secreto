@@ -53,4 +53,11 @@ function asignaTextoElemento(elemento,texto){
     let elementoHTML=document.getElementById(elemento);
     elementoHTML.innerHTML=texto;
 }
-//Luego crear una funcion y boton para restaurar la pagina a sus inicios
+/* //Luego crear una funcion y boton para restaurar la pagina a sus inicios
+function restaurarPagina() {
+    listaDeAmigos = []; // Vacía la lista de amigos
+    limpiarCaja(); // Limpia el cuadro de texto
+    actualizarLista(); // Actualiza la lista en el HTML
+    asignaTextoElemento('resultado', ''); // Limpia el resultado del sorteo
+    console.log("La página ha sido restaurada");
+} */
