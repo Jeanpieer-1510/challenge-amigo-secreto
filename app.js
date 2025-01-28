@@ -53,6 +53,7 @@ function asignaTextoElemento(elemento,texto){
     let elementoHTML=document.getElementById(elemento);
     elementoHTML.innerHTML=texto;
 }
+
 /* //Luego crear una funcion y boton para restaurar la pagina a sus inicios
 function restaurarPagina() {
     listaDeAmigos = []; // Vacía la lista de amigos
