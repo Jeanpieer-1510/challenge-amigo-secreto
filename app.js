@@ -15,7 +15,6 @@ function anadirAmigos() {
     listaDeAmigos.push(nombreAmigos); // Agrega el nombre a la lista
     limpiarCaja();
     actualizarLista();
-    console.log(listaDeAmigos);
 }
 
 // Limpia la caja de texto para nuevos ingresos
@@ -42,7 +41,6 @@ function sortearAmigo() {
         return;
     }
     const amigoSorteado = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
-    console.log(`Amigo sorteado: ${amigoSorteado}`);
     asignaTextoElemento('listaAmigos','')
     asignaTextoElemento('resultado', `Amigo sorteado: ${amigoSorteado}`);
 }
@@ -52,11 +50,11 @@ function asignaTextoElemento(elemento, texto) {
     document.getElementById(elemento).innerHTML = texto;
 }
 
-// Restaura la página a su estado inicial
+/* // Restaura la página a su estado inicial
 function restaurarPagina() {
     listaDeAmigos = []; // Vacía la lista de amigos
     limpiarCaja(); // Limpia el cuadro de texto
     actualizarLista(); // Actualiza la lista en el HTML
     asignaTextoElemento('resultado', ''); // Limpia el resultado del sorteo
     console.log("La página ha sido restaurada");
-}
+} */
