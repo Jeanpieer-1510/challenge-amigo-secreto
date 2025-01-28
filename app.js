@@ -35,23 +35,32 @@ function actualizarLista() {
     }
 }
 
-function sortearAmigo(params) {
-    if (listaDeAmigos == 0){
-        alert("No hay amigos para sortear");
-        return;
-    }else{
-        let amigoSorteado = listaDeAmigos[Math.floor(Math.random()*listaDeAmigos.length)]
-        console.log(amigoSorteado);
-        asignaTextoElemento('resultado',amigoSorteado);
-        const lista = document.getElementById('listaAmigos'); // Obtener el elemento de la lista
-    lista.innerHTML = ""; 
+// Función para realizar el sorteo y eliminar el nombre sorteado de la lista
+function sortearAmigo() {
+    if (listaDeAmigos.length === 0) {
+        alert("Sorteos terminados. No hay más amigos en la lista.");
+        asignaTextoElemento('resultado', ''); // Limpia el resultado del sorteo
         return;
     }
+
+    // Seleccionar un amigo aleatoriamente
+    let indiceSorteado = Math.floor(Math.random() * listaDeAmigos.length);
+    let amigoSorteado = listaDeAmigos[indiceSorteado];
+
+    // Mostrar el amigo sorteado y eliminarlo de la lista
+    asignaTextoElemento('resultado', amigoSorteado);
+    listaDeAmigos.splice(indiceSorteado, 1); // Eliminar el nombre sorteado
+
+    // Actualizar la lista en el HTML
+    actualizarLista();
+
+    console.log(`Amigo sorteado: ${amigoSorteado}`);
+    console.log(`Lista actualizada: ${listaDeAmigos}`);
 }
 
-function asignaTextoElemento(elemento,texto){
-    let elementoHTML=document.getElementById(elemento);
-    elementoHTML.innerHTML=texto;
+function asignaTextoElemento(elemento, texto) {
+    let elementoHTML = document.getElementById(elemento);
+    elementoHTML.innerHTML = texto;
 }
 
 /* //Luego crear una funcion y boton para restaurar la pagina a sus inicios
